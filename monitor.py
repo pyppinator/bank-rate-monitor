@@ -8,8 +8,9 @@ import requests
 
 # ============ НАСТРОЙКИ ============
 URL = "https://tb.by/individuals/crediting/top/kreditnyy-produkt--milyy-dom-/"
-TELEGRAM_TOKEN = "8316832107:AAGpltqACF4PQHwOIlq_TXFY_qpwUw84NKs"
-TELEGRAM_CHAT_ID = "232443634"
+import os
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 STATE_FILE = "state.json"  # файл, где хранится предыдущее значение
 # ===================================
 
