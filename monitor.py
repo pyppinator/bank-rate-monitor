@@ -45,11 +45,12 @@ def save_current(data):
 async def get_rate():
     """Заходит на сайт через настоящий браузер и вытаскивает цифры"""
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+                browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
+        await page.set_extra_http_headers({"Accept-Language": "ru-RU,ru;q=0.9"})
 
         print(f"[{datetime.now():%H:%M:%S}] Открываю страницу...")
-        await page.goto(URL, wait_until="networkidle", timeout=60000)
+        await page.goto(URL, wait_until="domcontentloaded", timeout=120000)
 
         # Ждём, пока появятся элементы с классом deposit-banner__feature-title
         try:
