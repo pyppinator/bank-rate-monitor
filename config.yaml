@@ -1,0 +1,10 @@
+notify:
+  console: true
+  telegram:
+    token: "8316832107:AAGpltqACF4PQHwOIlq_TXFY_qpwUw84NKs"
+    chat_id: "232443634"
+
+watches:
+  - name: bank-rate
+    url: "https://tb.by/individuals/crediting/top/kreditnyy-produkt--milyy-dom-/"
+    selector: ".deposit-banner__feature-main .deposit-banner__feature-title"
